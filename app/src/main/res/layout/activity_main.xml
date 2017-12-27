@@ -1,0 +1,109 @@
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="np.com.santoshbastola.finaldemo.MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="@color/activityBackground"
+    >
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:completionThreshold="1"
+                android:hint="@string/hint_enter_destination"
+                android:maxLines="1" />
+
+            <requestFocus />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:background="@drawable/button_bg_rounded_corners"
+            android:text="@string/text_button_go"
+            android:textColor="#FFFFFF"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/input_layout"
+            android:layout_toRightOf="@+id/input_layout" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="302dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:src="@drawable/ic_walk"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+
+        <TextView
+            android:id="@+id/textViewWalking"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:text="0 M"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:src="@mipmap/ic_distance"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+
+        <TextView
+            android:id="@+id/textViewDistance"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:text="0 KM"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:src="@mipmap/ic_clock"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/textViewDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:text="0 Min"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>
